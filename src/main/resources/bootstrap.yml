@@ -1,16 +1,46 @@
-spring:
-  application:
-    name: CONFIG-SERVER
-
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/SergeyBukhtiyarov/config-server
-          default-label: master
+#spring:
+#  application:
+#    name: CONFIG-SERVER
+#
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/SergeyBukhtiyarov/config-server
+#          default-label: main
 #          clone-on-start: true
         #searchPaths: licensingservice
 
+
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active:
+      - native, git
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+          git:
+           uri: https://github.com/SergeyBukhtiyarov/config-server
+          #searchPaths: licensingservice
+
+#server:
+#  port: 8071
+
+encrypt:
+  key: fje83Ki8403Iod87dne7Yjsl3THueh48jfuO9j4U2hf64Lo
+
+
+#Enable all Spring Boot Actuator endpoints.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 server:
   port: 8071
 
