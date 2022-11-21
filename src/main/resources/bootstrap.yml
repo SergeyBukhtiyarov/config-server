@@ -25,7 +25,7 @@ spring:
         native:
           search-locations: classpath:/config
           git:
-           uri: https://github.com/SergeyBukhtiyarov/config-server
+           uri: https://github.com/SergeyBukhtiyarov/config-server/config.git
           #searchPaths: licensingservice
 
 #server:
